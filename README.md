@@ -3,8 +3,8 @@ This repo contains basic flask app which has health endpoint and Docker file to 
 
 This repo contains main.tf,variables.tf,output.tf three terraform files now after cloning this repo you need to following things
 
-1.Download the credentials.json file of GCP service account which has access to create infra in gcp and copy to the repo location 
-2.Create one more file terraform.tfvars which need to have 3 things 
+1. Download the credentials.json file of GCP service account which has access to create infra in gcp and copy to the repo location
+2. Create one more file terraform.tfvars which need to have 3 things 
      project ( GCP project where we need to create infra )
      credentials_file ( path to json file we copied )
      cidr_range (ip range for subnet )
