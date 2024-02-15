@@ -1,6 +1,16 @@
 # flask-health-api
 This repo contains basic flask app which has health endpoint and Docker file to dockerize and terraform script to create infra in gcp .
 
+Approach used for this .
+
+1. Run the docker file and create image and push to Docker hub
+2. using terraform create GCP VM and install docker and run docker container via startup script
+3. create a instance group and attatch the instance to group 
+4. Create a GCP HTTP externalload balancer and backend service and attatch ig to backend service
+5. create a firewall rule which will allow ip of loadbalancer plus GCP Health probe ips to vm
+
+Choosen this approach because no need to whitelist 0.0.0.0/0 for vm port .
+
 This repo contains main.tf,variables.tf,output.tf three terraform files now after cloning this repo you need to following things
 
 1. Download the credentials.json file of GCP service account which has access to create infra in gcp and copy to the repo location
